@@ -24,3 +24,7 @@ sudo usermod -a -G docker casa
 sudo systemctl stop docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+
+# start Casa Node
+cd /usr/local/casa
+source launch.sh
