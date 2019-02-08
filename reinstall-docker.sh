@@ -25,6 +25,11 @@ sudo systemctl stop docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
+# Force docker.socket to start only after hdd mount
+sudo sed -i '/PartOf=docker.service/a After=mnt-data.mount' /lib/systemd/system/docker.socket
+
 # start Casa Node
-cd /usr/local/casa
-source launch.sh
+sudo systemctl enable casa.service
+
+# reboot to start casa services
+sudo reboot
