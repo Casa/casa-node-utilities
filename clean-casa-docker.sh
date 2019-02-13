@@ -11,4 +11,4 @@ docker rm $(docker ps -aq)
 docker rmi $(docker images -q) -f
 
 cd /usr/local/casa/
-source launch.sh
+. launch.sh
