@@ -7,5 +7,3 @@ if docker logs bitcoind 2>&1 | grep -q reindex-chainstate; then
 else
     echo Bitcoind Chainstate error not found. Please contact Casa Support at help@team.casa
 fi
-
-
