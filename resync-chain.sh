@@ -3,7 +3,10 @@
 
 if docker logs bitcoind 2>&1 | grep -q reindex-chainstate; then
     echo Bitcoind Chainstate error found. Fixing ...
-    curl -d '{"full": true}' -H "Content-Type: application/json" -X POST "http://127.0.0.1:3000/v1/device/resync-chain"
+    curl --header "Content-Type: application/json" \
+        --request POST \
+        --data '{"full":true}' \
+        "http://127.0.0.1:3000/v1/device/resync-chain"
     docker logs manager --tail 100 -f
 else
     echo Bitcoind Chainstate error not found. Please contact Casa Support at help@team.casa
