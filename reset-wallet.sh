@@ -6,4 +6,5 @@ docker exec lnd rm /root/.lnd/data/chain/bitcoin/mainnet/macaroons.db
 docker exec lnd rm /root/.lnd/data/graph/mainnet/channel.db
 docker exec lnd rm /root/.lnd/data/graph/mainnet/sphinxreplay.db
 docker exec manager rm /accounts/user.json
+docker restart lnd
 docker restart manager
