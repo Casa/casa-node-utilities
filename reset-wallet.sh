@@ -7,4 +7,4 @@ docker exec lnd rm /root/.lnd/data/graph/mainnet/channel.db
 docker exec lnd rm /root/.lnd/data/graph/mainnet/sphinxreplay.db
 docker exec manager rm /accounts/user.json
 docker restart lnd
-source /usr/local/casa/launch.sh
+docker-compose -f /usr/local/casa/applications/manager.yml up -d 
